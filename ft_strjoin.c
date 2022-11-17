@@ -6,7 +6,7 @@
 /*   By: seonghwc <seonghwc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/12 15:58:33 by seonghwc          #+#    #+#             */
-/*   Updated: 2022/07/13 19:23:37 by seonghwc         ###   ########.fr       */
+/*   Updated: 2022/10/12 14:10:27 by seonghwc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	int		len;
 	char	*ret;
 
-	if (s1 == NULL)
+	if (s1 == NULL || s2 == NULL)
 		return (NULL);
 	i = 0;
 	j = 0;

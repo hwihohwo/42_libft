@@ -6,7 +6,7 @@
 /*   By: seonghwc <seonghwc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/12 15:50:53 by seonghwc          #+#    #+#             */
-/*   Updated: 2022/07/28 20:33:45 by seonghwc         ###   ########.fr       */
+/*   Updated: 2022/11/17 18:51:50 by seonghwc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 {
 	t_list	*temp;
 
-	if (lst == NULL)
+	if (lst == NULL || new == NULL)
 		return ;
 	temp = *lst;
 	if (temp == NULL)

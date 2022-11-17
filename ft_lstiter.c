@@ -6,7 +6,7 @@
 /*   By: seonghwc <seonghwc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/12 15:51:38 by seonghwc          #+#    #+#             */
-/*   Updated: 2022/07/12 19:33:39 by seonghwc         ###   ########.fr       */
+/*   Updated: 2022/11/18 02:24:50 by seonghwc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
+	if (lst == NULL)
+		return ;
 	while (lst)
 	{
 		f(lst->content);
