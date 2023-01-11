@@ -6,7 +6,7 @@
 /*   By: seonghwc <seonghwc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/07 14:55:21 by seonghwc          #+#    #+#             */
-/*   Updated: 2022/07/13 17:52:13 by seonghwc         ###   ########.fr       */
+/*   Updated: 2023/01/11 13:44:40 by seonghwc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 
 # include <stdlib.h>
 # include <unistd.h>
+# include "ft_printf.h"
+# include "get_next_line_bonus.h"
 
 typedef struct s_list
 {

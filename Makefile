@@ -6,7 +6,7 @@
 #    By: seonghwc <seonghwc@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/07/12 19:35:10 by seonghwc          #+#    #+#              #
-#    Updated: 2022/07/12 20:25:16 by seonghwc         ###   ########.fr        #
+#    Updated: 2023/01/11 13:46:59 by seonghwc         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -44,7 +44,13 @@ SRCS                    = ft_atoi.c \
                       ft_putchar_fd.c \
                       ft_putstr_fd.c \
                       ft_putendl_fd.c \
-                      ft_putnbr_fd.c
+                      ft_putnbr_fd.c \
+					  ft_printf_utils.c \
+					  ft_printf.c \
+					  specifier_cases_1.c \
+					  specifier_cases_2.c \
+					  get_next_line_bonus.c \
+					  get_next_line_utils_bonus.c
 BNS_SRCS                = ft_lstsize.c \
                     ft_lstadd_front.c \
                     ft_lstclear.c \
@@ -66,7 +72,7 @@ endif
 $(NAME)     :   $(TOTAL_OBJS)
 	ar rc $@ $^
 %.o : %.c
-	$(CC) $(FLAGS) -c $< -o $@ -I .
+	$(CC) $(FLAGS) -c $< -o $@ -D BUFFER_SIZE=100000 -I .
 all :   $(NAME)
 bonus   :  
 	make FLAG_BONUS=1 all
