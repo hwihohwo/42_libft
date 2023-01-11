@@ -6,11 +6,12 @@
 #    By: seonghwc <seonghwc@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/07/12 19:35:10 by seonghwc          #+#    #+#              #
-#    Updated: 2023/01/11 13:46:59 by seonghwc         ###   ########.fr        #
+#    Updated: 2023/01/11 13:53:53 by seonghwc         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME                    = libft.a
+CC						= cc
 SRCS                    = ft_atoi.c \
                       ft_bzero.c \
                       ft_calloc.c \
@@ -50,8 +51,8 @@ SRCS                    = ft_atoi.c \
 					  specifier_cases_1.c \
 					  specifier_cases_2.c \
 					  get_next_line_bonus.c \
-					  get_next_line_utils_bonus.c
-BNS_SRCS                = ft_lstsize.c \
+					  get_next_line_utils_bonus.c \
+					ft_lstsize.c \
                     ft_lstadd_front.c \
                     ft_lstclear.c \
                     ft_lstdelone.c \
@@ -61,23 +62,15 @@ BNS_SRCS                = ft_lstsize.c \
                     ft_lstadd_back.c \
                     ft_lstnew.c
 OBJS                    = $(SRCS:%.c=%.o)
-BNS_OBJS                = $(BNS_SRCS:%.c=%.o)
 FLAGS                   = -Wall -Wextra -Werror
-ifdef FLAG_BONUS
-    TOTAL_OBJS = $(OBJS) $(BNS_OBJS)
-else
-    TOTAL_OBJS = $(OBJS)
-endif
 
-$(NAME)     :   $(TOTAL_OBJS)
+$(NAME)     :   $(OBJS)
 	ar rc $@ $^
 %.o : %.c
 	$(CC) $(FLAGS) -c $< -o $@ -D BUFFER_SIZE=100000 -I .
 all :   $(NAME)
-bonus   :  
-	make FLAG_BONUS=1 all
 clean   :
-	rm -f $(OBJS) $(BNS_OBJS)
+	rm -f $(OBJS)
 fclean  :   clean
 	rm -f $(NAME)
 re  :   fclean all
